@@ -25,12 +25,12 @@ app.use(cors());
 
 dotenv.config();
 
-mongoose.connect
+mongoose.connect 
     (process.env.MONGO_DB, { useNewUrlParser: true, useUnifiedTopology: true }
     ).then(() =>
         app.listen(process.env.PORT, () => console.log(`listening at ${process.env.PORT}`))
     ).catch((error) =>
-        console.log('error')
+        console.error('MongoDB connection error:', error)
     )
 
 
